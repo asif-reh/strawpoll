@@ -59,9 +59,6 @@ export default function Home() {
               placeholder="Search" 
               className="hidden md:block bg-[#252937] border border-[#3d4659] rounded-md px-4 py-2 text-sm w-48 focus:outline-none focus:border-gray-600"
             />
-            <button className="text-emerald-500 hover:text-emerald-400 font-medium text-sm transition-colors">
-              Login
-            </button>
           </div>
         </div>
       </header>
