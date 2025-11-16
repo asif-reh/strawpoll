@@ -1,8 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 interface Candidate {
   name: string;
@@ -15,21 +13,20 @@ export default function Home() {
   const totalVotes = 1451;
   
   const candidates: Candidate[] = [
-    { name: "मयूर शेळके", votes: 425, percentage: 29.29, color: "hsl(var(--chart-1))" },
-    { name: "अश्विन डीचोलकर", votes: 751, percentage: 51.76, color: "hsl(var(--chart-2))" },
-    { name: "बबन विश्वकर्मा", votes: 136, percentage: 9.37, color: "hsl(var(--chart-3))" },
-    { name: "रूपेश ठोंबरे", votes: 79, percentage: 5.45, color: "hsl(var(--chart-4))" },
-    { name: "यतिन देशमुख", votes: 14, percentage: 0.96, color: "hsl(var(--chart-5))" },
-    { name: "समीर ठाकूर", votes: 10, percentage: 0.69, color: "hsl(var(--chart-6))" },
-    { name: "ममता प्रितम म्हात्रे", votes: 7, percentage: 0.48, color: "hsl(var(--chart-7))" },
-    { name: "संतोष जी शेट्टी", votes: 5, percentage: 0.34, color: "hsl(var(--chart-8))" },
-    { name: "अलका प्रभाकर कांबळे", votes: 5, percentage: 0.34, color: "hsl(var(--chart-9))" },
-    { name: "शशिकला सिंग", votes: 4, percentage: 0.28, color: "hsl(var(--chart-10))" },
-    { name: "किशोर चौतमोल", votes: 4, percentage: 0.28, color: "hsl(var(--chart-1))" },
-    { name: "किशोर चौतमोल", votes: 3, percentage: 0.21, color: "hsl(var(--chart-2))" },
-    { name: "कविता किशोर चौतमोल", votes: 3, percentage: 0.21, color: "hsl(var(--chart-3))" },
-    { name: "राजेश्री वावेकर", votes: 3, percentage: 0.21, color: "hsl(var(--chart-4))" },
-    { name: "भास्कर शेट्टी", votes: 2, percentage: 0.14, color: "hsl(var(--chart-5))" },
+    { name: "अश्विन डीचोलकर", votes: 751, percentage: 51.76, color: "#FF6B6B" },
+    { name: "मयूर शेळके", votes: 425, percentage: 29.29, color: "#FF8C42" },
+    { name: "बबन विश्वकर्मा", votes: 136, percentage: 9.37, color: "#FFB84D" },
+    { name: "रूपेश ठोंबरे", votes: 79, percentage: 5.45, color: "#4D9FFF" },
+    { name: "यतिन देशमुख", votes: 14, percentage: 0.96, color: "#5EEAD4" },
+    { name: "समीर ठाकूर", votes: 10, percentage: 0.69, color: "#FF8F42" },
+    { name: "ममता प्रितम म्हात्रे", votes: 7, percentage: 0.48, color: "#FF7B7B" },
+    { name: "संतोष जी शेट्टी", votes: 5, percentage: 0.34, color: "#6B8EFF" },
+    { name: "अलका प्रभाकर कांबळे", votes: 5, percentage: 0.34, color: "#FFB366" },
+    { name: "शशिकला सिंग", votes: 4, percentage: 0.28, color: "#8B7FFF" },
+    { name: "किशोर चौतमोल", votes: 4, percentage: 0.28, color: "#7F8BFF" },
+    { name: "कविता किशोर चौतमोल", votes: 3, percentage: 0.21, color: "#6FC9C9" },
+    { name: "राजेश्री वावेकर", votes: 3, percentage: 0.21, color: "#94A3B8" },
+    { name: "भास्कर शेट्टी", votes: 2, percentage: 0.14, color: "#64748B" },
   ];
 
   const pieData = candidates.map((candidate) => ({
@@ -39,108 +36,150 @@ export default function Home() {
   }));
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            नविन पनवेल मधे प्रभाग क्रमांक ९६ मधे जनतेची पसंदी कोण ?
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            by LoopDrop Official · 23 hours ago
-          </p>
+    <div className="min-h-screen bg-[#1a1d29] text-white">
+      {/* Header */}
+      <header className="border-b border-[#2d3348] bg-[#1a1d29]">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span className="text-lg font-semibold ml-2">StrawPoll</span>
+            </div>
+            <nav className="hidden md:flex gap-6 text-sm text-gray-400">
+              <a href="#" className="hover:text-white">Create Poll</a>
+              <a href="#" className="hover:text-white">Schedule Meeting</a>
+              <a href="#" className="hover:text-white">Demo</a>
+              <a href="#" className="hover:text-white">Pricing</a>
+            </nav>
+          </div>
+          <div className="flex items-center gap-4">
+            <input 
+              type="search" 
+              placeholder="Search" 
+              className="hidden md:block bg-[#252937] border border-[#3d4659] rounded-md px-4 py-2 text-sm w-48 focus:outline-none focus:border-gray-600"
+            />
+            <div className="flex items-center gap-2 bg-[#252937] rounded-full px-3 py-1.5 border border-[#3d4659]">
+              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-xs font-bold">S</div>
+              <span className="text-sm">Shaik Asif</span>
+              <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Free</span>
+            </div>
+          </div>
         </div>
+      </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Candidates List */}
-          <Card className="p-6 bg-card border-border">
-            <div className="space-y-4">
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-6 py-8">
+        <div className="bg-[#252937] rounded-lg border border-[#3d4659] p-8">
+          {/* Title */}
+          <div className="mb-8">
+            <h1 className="text-xl font-medium mb-2 text-gray-100">
+              नविन पनवेल मधे प्रभाग क्रमांक १६ मधे जनतेची पसंदी कोण ?
+            </h1>
+            <p className="text-sm text-gray-400">
+              by Loopdrop Official · 1 day ago
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Left Side - Progress Bars */}
+            <div className="space-y-3.5">
               {candidates.map((candidate, index) => (
-                <div key={index} className="space-y-2">
+                <div key={index} className="space-y-1.5">
                   <div className="flex justify-between items-center">
-                    <h3 className="text-foreground font-medium">{candidate.name}</h3>
-                    <span className="text-muted-foreground text-sm">
+                    <span className="text-sm text-gray-300">{candidate.name}</span>
+                    <span className="text-sm text-gray-400">
                       {candidate.percentage.toFixed(2)}% ({candidate.votes} votes)
                     </span>
                   </div>
-                  <Progress 
-                    value={candidate.percentage} 
-                    className="h-3"
-                    style={{
-                      // @ts-ignore
-                      '--progress-background': candidate.color,
-                    } as React.CSSProperties}
-                  />
+                  <div className="h-1.5 bg-[#1a1d29] rounded-full overflow-hidden">
+                    <div 
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${candidate.percentage}%`,
+                        backgroundColor: candidate.color
+                      }}
+                    />
+                  </div>
                 </div>
               ))}
-            </div>
-            <div className="mt-6 pt-4 border-t border-border">
-              <p className="text-muted-foreground text-sm">Total votes: {totalVotes}</p>
-            </div>
-          </Card>
+              
+              {/* Total votes */}
+              <div className="pt-4 mt-2">
+                <p className="text-sm text-gray-400">Total votes: {totalVotes}</p>
+              </div>
 
-          {/* Pie Chart */}
-          <Card className="p-6 bg-card border-border">
-            <ResponsiveContainer width="100%" height={500}>
-              <PieChart>
-                <Pie
-                  data={pieData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
-                    if (percent < 0.03) return null;
-                    const RADIAN = Math.PI / 180;
-                    const radius = innerRadius + (outerRadius - innerRadius) * 0.6;
-                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-                    
-                    // Determine label text based on slice size
-                    let displayName = name;
-                    if (percent < 0.08) {
-                      // For very small slices, show first word only
-                      displayName = name.split(' ')[0];
-                    } else if (percent < 0.15) {
-                      // For medium slices, show abbreviated
-                      const words = name.split(' ');
-                      displayName = words.length > 2 ? `${words[0]} ${words[1]}...` : name;
-                    }
-                    
-                    return (
-                      <text 
-                        x={x} 
-                        y={y} 
-                        fill="black" 
-                        textAnchor="middle" 
-                        dominantBaseline="central"
-                        fontSize={percent > 0.2 ? "16" : "13"}
-                        fontWeight="700"
-                      >
-                        {displayName}
-                      </text>
-                    );
-                  }}
-                  outerRadius={180}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  contentStyle={{
-                    backgroundColor: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '0.5rem',
-                    color: 'hsl(var(--foreground))',
-                  }}
-                  formatter={(value: number) => [`${value} votes`, 'Votes']}
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </Card>
+              {/* Buttons */}
+              <div className="flex gap-3 pt-4">
+                <button className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-md transition-colors">
+                  <span className="text-base">📊</span>
+                  Live results
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-[#3d4659] hover:bg-[#4a5268] text-gray-300 text-sm rounded-md transition-colors">
+                  <span>←</span>
+                  Back to poll
+                </button>
+                <button className="ml-auto flex items-center gap-2 px-4 py-2 bg-[#3d4659] hover:bg-[#4a5268] text-gray-300 text-sm rounded-md transition-colors">
+                  <span>↗</span>
+                  Share
+                </button>
+              </div>
+            </div>
+
+            {/* Right Side - Pie Chart */}
+            <div className="flex items-start justify-center">
+              <ResponsiveContainer width="100%" height={450}>
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
+                      if (percent < 0.015) return null;
+                      const RADIAN = Math.PI / 180;
+                      const radius = innerRadius + (outerRadius - innerRadius) * 0.55;
+                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                      
+                      let displayName = name;
+                      if (percent < 0.03) {
+                        displayName = name.split(' ')[0];
+                      } else if (percent < 0.08) {
+                        const words = name.split(' ');
+                        displayName = words.length > 1 ? words.slice(0, 2).join(' ') : name;
+                      }
+                      
+                      return (
+                        <text 
+                          x={x} 
+                          y={y} 
+                          fill="black" 
+                          textAnchor="middle" 
+                          dominantBaseline="central"
+                          fontSize={percent > 0.3 ? "15" : percent > 0.15 ? "13" : percent > 0.05 ? "11" : "9"}
+                          fontWeight="700"
+                        >
+                          {displayName}
+                        </text>
+                      );
+                    }}
+                    outerRadius={180}
+                    fill="#8884d8"
+                    dataKey="value"
+                    stroke="#000000"
+                    strokeWidth={2}
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
