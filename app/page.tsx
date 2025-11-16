@@ -10,22 +10,22 @@ interface Candidate {
 }
 
 export default function Home() {
-  const totalVotes = 1451;
+  const totalVotes = 1476;
   
   const candidates: Candidate[] = [
-    { name: "अश्विन डीचोलकर", votes: 751, percentage: 51.76, color: "#FF6B6B" },
-    { name: "मयूर शेळके", votes: 425, percentage: 29.29, color: "#FF8C42" },
-    { name: "बबन विश्वकर्मा", votes: 136, percentage: 9.37, color: "#FFB84D" },
-    { name: "रूपेश ठोंबरे", votes: 79, percentage: 5.45, color: "#4D9FFF" },
-    { name: "यतिन देशमुख", votes: 14, percentage: 0.96, color: "#5EEAD4" },
-    { name: "समीर ठाकूर", votes: 10, percentage: 0.69, color: "#FF8F42" },
-    { name: "ममता प्रितम म्हात्रे", votes: 7, percentage: 0.48, color: "#FF7B7B" },
+    { name: "अश्विन डीचोलकर", votes: 751, percentage: 50.88, color: "#FF6B6B" },
+    { name: "मयूर शेळके", votes: 450, percentage: 30.49, color: "#FF8C42" },
+    { name: "बबन विश्वकर्मा", votes: 136, percentage: 9.21, color: "#FFB84D" },
+    { name: "रूपेश ठोंबरे", votes: 79, percentage: 5.35, color: "#4D9FFF" },
+    { name: "यतिन देशमुख", votes: 14, percentage: 0.95, color: "#5EEAD4" },
+    { name: "समीर ठाकूर", votes: 10, percentage: 0.68, color: "#FF8F42" },
+    { name: "ममता प्रितम म्हात्रे", votes: 7, percentage: 0.47, color: "#FF7B7B" },
     { name: "संतोष जी शेट्टी", votes: 5, percentage: 0.34, color: "#6B8EFF" },
     { name: "अलका प्रभाकर कांबळे", votes: 5, percentage: 0.34, color: "#FFB366" },
-    { name: "शशिकला सिंग", votes: 4, percentage: 0.28, color: "#8B7FFF" },
-    { name: "किशोर चौतमोल", votes: 4, percentage: 0.28, color: "#7F8BFF" },
-    { name: "कविता किशोर चौतमोल", votes: 3, percentage: 0.21, color: "#6FC9C9" },
-    { name: "राजेश्री वावेकर", votes: 3, percentage: 0.21, color: "#94A3B8" },
+    { name: "शशिकला सिंग", votes: 4, percentage: 0.27, color: "#8B7FFF" },
+    { name: "किशोर चौतमोल", votes: 4, percentage: 0.27, color: "#7F8BFF" },
+    { name: "कविता किशोर चौतमोल", votes: 3, percentage: 0.20, color: "#6FC9C9" },
+    { name: "राजेश्री वावेकर", votes: 3, percentage: 0.20, color: "#94A3B8" },
     { name: "भास्कर शेट्टी", votes: 2, percentage: 0.14, color: "#64748B" },
   ];
 
@@ -59,29 +59,27 @@ export default function Home() {
               placeholder="Search" 
               className="hidden md:block bg-[#252937] border border-[#3d4659] rounded-md px-4 py-2 text-sm w-48 focus:outline-none focus:border-gray-600"
             />
-            <div className="flex items-center gap-2 bg-[#252937] rounded-full px-3 py-1.5 border border-[#3d4659]">
-              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-xs font-bold">S</div>
-              <span className="text-sm">Shaik Asif</span>
-              <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Free</span>
-            </div>
+            <button className="text-emerald-500 hover:text-emerald-400 font-medium text-sm transition-colors">
+              Login
+            </button>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-8">
-        <div className="bg-[#252937] rounded-lg border border-[#3d4659] p-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+        <div className="bg-[#252937] rounded-lg border border-[#3d4659] p-4 sm:p-6 md:p-8">
           {/* Title */}
           <div className="mb-8">
             <h1 className="text-xl font-medium mb-2 text-gray-100">
-              नविन पनवेल मधे प्रभाग क्रमांक १६ मधे जनतेची पसंदी कोण ?
+              नविन पनवेल मधे प्रभाग क्रमांक १६ मधे जनतेची पसंती कोण ?
             </h1>
             <p className="text-sm text-gray-400">
               by Loopdrop Official · 1 day ago
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {/* Left Side - Progress Bars */}
             <div className="space-y-3.5">
               {candidates.map((candidate, index) => (
@@ -110,7 +108,7 @@ export default function Home() {
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-3 pt-4">
+              <div className="flex flex-wrap gap-3 pt-4">
                 <button className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-md transition-colors">
                   <span className="text-base">📊</span>
                   Live results
@@ -119,7 +117,7 @@ export default function Home() {
                   <span>←</span>
                   Back to poll
                 </button>
-                <button className="ml-auto flex items-center gap-2 px-4 py-2 bg-[#3d4659] hover:bg-[#4a5268] text-gray-300 text-sm rounded-md transition-colors">
+                <button className="flex items-center gap-2 px-4 py-2 bg-[#3d4659] hover:bg-[#4a5268] text-gray-300 text-sm rounded-md transition-colors lg:ml-auto">
                   <span>↗</span>
                   Share
                 </button>
@@ -136,18 +134,18 @@ export default function Home() {
                     cy="50%"
                     labelLine={false}
                     label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
-                      if (percent < 0.015) return null;
+                      if (!percent || percent < 0.015 || !midAngle) return null;
                       const RADIAN = Math.PI / 180;
                       const radius = innerRadius + (outerRadius - innerRadius) * 0.55;
                       const x = cx + radius * Math.cos(-midAngle * RADIAN);
                       const y = cy + radius * Math.sin(-midAngle * RADIAN);
                       
-                      let displayName = name;
+                      let displayName = name || '';
                       if (percent < 0.03) {
-                        displayName = name.split(' ')[0];
+                        displayName = displayName.split(' ')[0];
                       } else if (percent < 0.08) {
-                        const words = name.split(' ');
-                        displayName = words.length > 1 ? words.slice(0, 2).join(' ') : name;
+                        const words = displayName.split(' ');
+                        displayName = words.length > 1 ? words.slice(0, 2).join(' ') : displayName;
                       }
                       
                       return (
